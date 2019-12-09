@@ -10,9 +10,9 @@
 
 	<title></title>
 <style type="text/css">
-	*{
+	/**{
 	  border: solid 1px black
-	} 
+	}*/ 
 
 	a{
 		font-family:微軟正黑體;
@@ -50,6 +50,18 @@
 		align-items: center;
 	}
 
+
+	.card_style_01{
+		width: 18rem; 
+		padding: 15px; 
+		background: #e5e5e5; 
+		border: solid 0px; 
+		margin:0 auto;	
+		margin-top:30px; 
+		margin-bottom:30px; 
+		font-family:微軟正黑體;
+	}
+
 	.card_p{		
 		color: #747579;
 		font-weight:bold;
@@ -81,16 +93,16 @@
 	<section>
 	<ul class="nav justify-content-center">
 	  <li class="nav-item">
-	    <a class="nav-link active" href="#">Active</a>
+	    <a class="nav-link active" href="#"></a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link" href="#">Link</a>
+	    <a class="nav-link" href="#"></a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link" href="#">Link</a>
+	    <a class="nav-link" href="#"></a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+	    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
 	  </li>
 	</ul>
 	</section>
@@ -126,7 +138,7 @@
 					  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">說明</a>
 					</li>
 					<li class="nav-item">
-					  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">我的投資</a>
+					  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">我的資訊</a>
 					</li>					
 				</ul>
 				<div class="tab-content" id="myTabContent">
@@ -135,20 +147,26 @@
 							<li> <p>投入的ETH，每日會按照當初投入的枚數發放利息。</p></li>
 							<li> <p>利息會直接打回錢包。</p></li>							
 						</ul>
+
+						<a href="">合約地址</a>
 					</div>
-					<div class="tab-pane fade mic_font " id="profile" role="tabpanel" aria-labelledby="profile-tab">	
-						<div class="card " style="width: 18rem; padding: 15px; background: #e5e5e5; border: solid 0px;">
+					<div class="tab-pane fade mic_font text-center" id="profile" role="tabpanel" aria-labelledby="profile-tab">	
+						<div class="card card_style_01 text-left">
 						  <p>我的地址：<span id="my_address"></span></p>
 						  <p>我的餘額：<span id="my_balance"></span></p>    
     					  <hr/>
+    					  <p>利息：<span id="my_balance"></span></p>   
+    					  <p>已回饋枚數:</p> 
 						</div>	
 					</div>					
 				</div>
 		    </div>		    
 		  </div>
-		</div>			
+		</div>				
 	</section>
-
+	<section>
+		
+	</section>
 
 
 
