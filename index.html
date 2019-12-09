@@ -10,9 +10,9 @@
 
 	<title></title>
 <style type="text/css">
-	/**{
+	*{
 	  border: solid 1px black
-	} */
+	} 
 
 	a{
 		font-family:微軟正黑體;
@@ -132,11 +132,17 @@
 				<div class="tab-content" id="myTabContent">
 					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 						<ul class="mic_font">
-							<li> 投入的ETH，每日會按照當初投入的枚數發放利息。</li>
-							<li> 利息會直接打回錢包。</li>							
+							<li> <p>投入的ETH，每日會按照當初投入的枚數發放利息。</p></li>
+							<li> <p>利息會直接打回錢包。</p></li>							
 						</ul>
 					</div>
-					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">B</div>					
+					<div class="tab-pane fade mic_font " id="profile" role="tabpanel" aria-labelledby="profile-tab">	
+						<div class="card " style="width: 18rem; padding: 15px; background: #e5e5e5; border: solid 0px;">
+						  <p>我的地址：<span id="my_address"></span></p>
+						  <p>我的餘額：<span id="my_balance"></span></p>    
+    					  <hr/>
+						</div>	
+					</div>					
 				</div>
 		    </div>		    
 		  </div>
