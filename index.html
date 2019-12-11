@@ -12,9 +12,9 @@
 
 	<title></title>
 <style type="text/css">
-	/**{
-	  border: solid 1px black
-	}*/ 
+	*{
+	  font-family:微軟正黑體;
+	} 
 
 	a{
 		font-family:微軟正黑體;
@@ -69,6 +69,15 @@
 		font-weight:bold;
 		font-size: 30px;
 
+	}
+
+	.user_info{
+		border-radius: 15px; 
+		background-color: #f7f7f7;
+		padding: 30px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		box-shadow: 0px 0px 5px rgba(0,0,0,0.25);
 	}
 
 	.subtitle{
@@ -127,7 +136,7 @@
 				  <div class="card-body text-center ">
 				    <blockquote class="blockquote mb-0 column" >
 				      <div class="ETH-LOGO " data-aos="zoom-in"></div>				      	
-				      <div class="card_p">0.65% <span class="subtitle"> 日利息</span> </div> 
+				      <div class="card_p">0.34% <span class="subtitle"> 日利率</span> </div> 
 				      <label class="field a-field a-field_a2 page__field table_distant" >
                          <div class="input-group mb-3">
 							<input type="text" class="form-control" placeholder="輸入枚數" aria-label="Recipient's username" aria-describedby="basic-addon2" >
@@ -167,22 +176,22 @@
 					</li>					
 				</ul>
 				<div class="tab-content" id="myTabContent">
-					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" >
+					<div class="tab-pane fade show active user_info" id="home" role="tabpanel" aria-labelledby="home-tab" data-aos="fade-up" >
 						<ul class="mic_font">
 							<li> <p>投入的ETH，每日會按照當初投入的枚數發放利息。</p></li>
 							<li> <p>利息會直接打回錢包。</p></li>							
 						</ul>
 						<a href="">合約地址</a>
 					</div>
-					<div class="tab-pane fade mic_font text-center" id="profile" role="tabpanel" aria-labelledby="profile-tab">	
-						<div class="card card_style_01 text-left">
+					<div class="tab-pane fade mic_font " id="profile" role="tabpanel" aria-labelledby="profile-tab">	
+						<div class="container-fluid user_info">						
 						  <p>我的地址：<span id="my_address"></span></p>
 						  <p>我的餘額：<span id="my_balance"></span></p>    
     					  <hr/>
     					  <p>利息：<span id="my_balance"></span></p>   
-    					  <p>已回饋枚數:</p> 
-						</div>	
-					</div>					
+    					  <p>已收到的回饋枚數:</p> 							
+						</div>
+					</div>
 				</div>
 		    </div>		    
 		  </div>
