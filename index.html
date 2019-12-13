@@ -12,8 +12,9 @@
 
 <!-- Customized css -->
 <link href="./static/css/main.css" rel="stylesheet">
-<!-- install jquery -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
 
 	<title> Dividend </title>
 
@@ -47,13 +48,14 @@
 				      <div class="ETH-LOGO " ></div>				      	
 				      <div class="card_p">0.34% <span class="subtitle"> 日利率</span> </div> 
 				      <label class="field a-field a-field_a2 page__field table_distant" >
-                         <div class="input-group mb-3">
-							<input type="text" class="form-control quantity" placeholder="輸入枚數" aria-label="Recipient's username" aria-describedby="basic-addon2" value ="1" >							 
+                         <div class="input-group mb-3" id="ticket" data-price="141">
+							<input type="text" class="form-control quantity"  placeholder="輸入枚數" aria-label="Recipient's username" aria-describedby="basic-addon2" >							 
 							<div class="input-group-append">
 							   <span class="input-group-text" id="basic-addon2">ETH</span><a href="#" class="btn btn-primary">投資</a>
-							</div>							
+							</div>																			
 						 </div>	
-						 <div class="ETH_price"><p>價錢：$<span id ="total">300</span></p></div>					 
+						 <div class="ETH_price text-left"><p>匯率 : <span id ="total"></span> USD</p></div>
+						 <div class="ETH_price text-left"><p>更新時間 : <span id ="time"></span></p></div>					 
                        </label>                       
 					   <table class="table table-sm table_distant text-left">							 
 							<tbody>
@@ -111,8 +113,8 @@
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3 foot_font">© 2019 Copyright:
           <a href="https://www.facebook.com/profile.php?id=100000355901010">Weber</a>
+          <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/tw/"><img alt="創用 CC 授權條款" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/tw/80x15.png" /></a><br />本著作係採用<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/tw/">創用 CC 姓名標示-相同方式分享 3.0 台灣 授權條款</a>授權.                  
         </div>
-    </section>
     </footer>
 
 
@@ -120,14 +122,13 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
 
+ <!-- Customized js -->
+<script src="./static/js/main.js"></script>
 </body>
 </html>
