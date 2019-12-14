@@ -10,10 +10,13 @@ $(document).ready(function(){
       }).done(function(msg) {   
         console.log(msg);
         var price = (msg[0].price_usd);
-        var updatedtime = (msg[0].last_updated);        
-        var date = new Date(parseInt(updatedtime));
+        var updatedtime = (msg[0].last_updated); 
+        var now = new Date();       
+        var date = new Date(parseInt(updatedtime)); 
+        var DD = new Date(now-date);      
+
         $("#total").text(toPercent(price));  
-        $("#time").text(date);  
+        $("#time").text(DD);  
       });
   })
 
