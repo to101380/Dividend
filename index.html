@@ -14,6 +14,8 @@
 <link href="./static/css/main.css" rel="stylesheet">
 <!-- Jquery -->
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<!-- Web3 -->
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
 
 
 	<title> Dividend </title>
@@ -46,7 +48,10 @@
 				  <div class="card-body text-center ">
 				    <blockquote class="blockquote mb-0 column" >
 				      <div class="ETH-LOGO " ></div>				      	
-				      <div class="card_p">0.34% <span class="subtitle"> 日利率</span> </div> 
+				      <div class="card_p">
+				      	<p id="Interest_number"></p>
+				      	<span class="subtitle">日利率</span> 
+				      </div> 
 				      <label class="field a-field a-field_a2 page__field table_distant" >
                          <div class="input-group mb-3" id="ticket" data-price="141">
 							<input type="text" class="form-control quantity"  placeholder="輸入枚數" aria-label="Recipient's username" aria-describedby="basic-addon2" >							 
@@ -60,11 +65,11 @@
 							<tbody>
 								 <tr>
 								   <th scope="row" style="padding-left: 30px;" >參與人數</th>
-								   <td>23</td>							      						     
+								   <td id="count"></td>							      						     
 								 </tr>
 								 <tr>
-								   <th scope="row" style="padding-left: 30px;" >投資報酬率</th>
-								   <td>40%</td>							      						     
+								   <th scope="row" style="padding-left: 30px;" >合約餘額</th>
+								   <td ><span id="total_balance"></span> ETH</td>							      						     
 								 </tr>	
 								 <tr>
 								   <th scope="row" style="padding-left: 30px;">年化率</th>
@@ -95,12 +100,14 @@
 					</div>
 					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">	
 						<div class="container-fluid user_info">						
-						  <p>我的地址：<div class="info" id="my_address">0xbc1ADfF2EAC8dbA22d382DFADDf7e6B73aBC2334</div></p>
+						  <p>我的地址：<div class="info" id="my_address"></div></p>
 						  <p>我的餘額：<span class="info_a1" id="my_balance">1510.235</span>ETH</p>    
     					  <hr/>
-    					  <p>利息：<span id="my_balance"></span></p>   
-    					  <p>已收到的回饋枚數:</p> 	
-    					  <p>區塊高度:</p> 						
+    					  <p>投入本金:<span id="capital"></span> ETH</p>
+    					  <p>利息：<span id="user_interest"></span> 日利率</p>   
+    					  <p>已收到的回饋枚數:<span id="profit"></span> ETH</p> 	
+    					  <p>區塊高度:<span id="block_height"></span></p>
+    					  <p>交易完成時間:<span id="time"></span></p>  						
 						</div>
 					</div>
 				</div>

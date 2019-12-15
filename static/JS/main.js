@@ -13,7 +13,7 @@ $(document).ready(function(){
         var updatedtime = (msg[0].last_updated); 
         var now = new Date();       
         var date = new Date(parseInt(updatedtime)); 
-        var DD = new Date(now-date);     
+        var DD = new Date(now-date);      
 
         $("#total").text(toPercent(ETH_price));  
         $("#time").text(DD);
@@ -31,8 +31,77 @@ function toPercent(point){
     return str;
   }
 
-//Just-in-time calculation
-$(document).ready(function(){
-  
-});
+function toPercent_A(point){
+    var str=Number(point).toFixed(5);          
+    return str;
+  }  
+
+function toPercent_01(point){
+    var str=Number(point*100).toFixed(2);
+    str+="%";
+    return str;
+  }
+
+//smart contract
+
+if (typeof web3 !== 'undefined') {
+      web3 = new Web3(web3.currentProvider);
+      console.log("Web3連接成功");
+    } else {
+      // Set the provider you want from Web3.providers
+      web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));     
+    }
+
+    var myContract;
+    var coinbase;
+
+    async function printPostsToConsole() {
+
+      
+      coinbase = await web3.eth.getCoinbase();      
+      var balance = await web3.eth.getBalance(coinbase);
+      $("#my_address").text(coinbase);
+      $("#my_balance").text(web3.utils.fromWei(balance));  //wei 轉換成 ether web3.utils.fromWei()
+
+      var contract_address = "0x1cec3eD73AFF23633eA0f5a36556D07D7AFBedE4";
+      var contract_abi = [{"constant":true,"inputs":[],"name":"count","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"Safe_trans","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"a","type":"uint256"},{"name":"b","type":"uint256"}],"name":"distribute","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"userinfo","outputs":[{"name":"amount","type":"uint256"},{"name":"user_profit","type":"uint256"},{"name":"block_number","type":"uint256"},{"name":"timestamp","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"Dividing_times","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"querybalance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"key","type":"uint256"}],"name":"Set_Interest","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getInterest","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"invest","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"Amount_invested","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"quit","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}];
+
+      myContract = new web3.eth.Contract(contract_abi, contract_address);
+
+      //取得合約餘額 
+      var balance_contract = await web3.eth.getBalance(contract_address);
+      $("#total_balance").text(toPercent_A(web3.utils.fromWei(balance_contract)));
+
+      var Interest = await myContract.methods.getInterest().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
+      $("#Interest_number").text(toPercent_01(1/Interest));
+
+      var count = await myContract.methods.count().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
+      $("#count").text(count);
+
+      var user_info = await myContract.methods.userinfo(coinbase).call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
+      $("#capital").text(web3.utils.fromWei(user_info[0]));
+      $("#user_interest").text(toPercent_01(1/user_info[1]));      
+      $("#block_height").text(user_info[2]);
+      var trans_time = new Date(parseInt(user_info[3]));        
+      var now= new Date();    
+      var time = new Date(now-trans_time); 
+      $("#time").text(time);   
+
+      var Dividing_time = await myContract.methods.Dividing_times(coinbase).call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'})
+      console.log(parseInt(Dividing_time),parseInt( web3.utils.fromWei(user_info[0])),parseFloat(1/user_info[1])) ;                   
+      $("#profit").text(toPercent_A(parseInt(Dividing_time)*parseInt( web3.utils.fromWei(user_info[0]))*parseFloat(1/user_info[1])));
+    };
+
+    printPostsToConsole();
+
+
+    function invest(){
+      myContract.methods.invest().send({from: coinbase, value: "100000000000000000"}).then(function(receipt){
+          alert();
+        location.reload();
+      });
+    }
+
+      //購買
+
 
