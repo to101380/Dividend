@@ -108,6 +108,16 @@
 		font-size: 10px;
 		color: #e5e5e5;		
 	}
+
+	.revert{
+		margin: 3px;
+		color: red;
+	}
+
+	.foot_time{
+		margin-left:10px;
+		margin-right:10px; 
+	}
 	
 
 

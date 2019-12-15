@@ -94,7 +94,8 @@
 					<div class="tab-pane fade show active user_info" id="home" role="tabpanel" aria-labelledby="home-tab" data-aos="fade-up" >
 						<ul>
 							<li> <p>投入的ETH，每日會按照當初投入的枚數發放利息。</p></li>
-							<li> <p>利息會直接打回錢包。</p></li>							
+							<li> <p>利息會直接打回錢包。</p></li>	
+							<li> <p>可以隨時退出，退出可以拿回本金，但平台會收手續費。</p></li>													
 						</ul>
 						<a href="">合約地址</a>
 					</div>
@@ -124,7 +125,10 @@
 					   	  </table> 					   	
     					  <p>交易完成時間:<span class="info" id="time"></span></p>  						
 						</div>
-						<button type="button" class="btn btn-danger" onclick="quite();">我要退出</button>
+						<div>
+							<button type="button" class="btn btn-danger" onclick="quite();">我要退出</button>
+							<p class="revert">目前退出扣除的金額為: <span id="de_capital"></span> ETH</p>
+						</div>							
 					</div>
 				</div>
 		    </div>		    
@@ -136,7 +140,7 @@
         <div class="footer-copyright text-center py-3 foot_font">© 2019 Copyright:
           <a href="https://www.facebook.com/profile.php?id=100000355901010">Weber</a>                         
         </div>
-        <div class="footer-copyright text-center py-3 foot_font ETH_price text-left"><p>網站更新時間 : <span id ="time"></span></p></div>
+        <div class="footer-copyright text-center py-3 foot_font ETH_price text-left foot_time"><p>網站更新時間 : <span id ="update_time"></span></p></div>
     </footer>     
 
 
