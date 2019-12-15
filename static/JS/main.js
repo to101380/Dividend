@@ -42,6 +42,7 @@ function toPercent_01(point){
     return str;
   }
 
+
 //smart contract
 
 if (typeof web3 !== 'undefined') {
@@ -61,9 +62,9 @@ if (typeof web3 !== 'undefined') {
       coinbase = await web3.eth.getCoinbase();      
       var balance = await web3.eth.getBalance(coinbase);
       $("#my_address").text(coinbase);
-      $("#my_balance").text(web3.utils.fromWei(balance));  //wei 轉換成 ether web3.utils.fromWei()
+      $("#my_balance").text(toPercent_A(web3.utils.fromWei(balance)));  //wei 轉換成 ether web3.utils.fromWei()
 
-      var contract_address = "0x1cec3eD73AFF23633eA0f5a36556D07D7AFBedE4";
+      var contract_address = "0x8edC250992d5A39DaAAe63D09282bCDAFAb88dF6";
       var contract_abi = [{"constant":true,"inputs":[],"name":"count","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"Safe_trans","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"a","type":"uint256"},{"name":"b","type":"uint256"}],"name":"distribute","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"userinfo","outputs":[{"name":"amount","type":"uint256"},{"name":"user_profit","type":"uint256"},{"name":"block_number","type":"uint256"},{"name":"timestamp","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"Dividing_times","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"querybalance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"key","type":"uint256"}],"name":"Set_Interest","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getInterest","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"invest","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"Amount_invested","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"quit","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}];
 
       myContract = new web3.eth.Contract(contract_abi, contract_address);
@@ -82,9 +83,10 @@ if (typeof web3 !== 'undefined') {
       $("#capital").text(web3.utils.fromWei(user_info[0]));
       $("#user_interest").text(toPercent_01(1/user_info[1]));      
       $("#block_height").text(user_info[2]);
-      var trans_time = new Date(parseInt(user_info[3]));        
+      var trans_time = new Date(parseInt(user_info[3]));             
       var now= new Date();    
       var time = new Date(now-trans_time); 
+      console.log(now,trans_time);
       $("#time").text(time);   
 
       var Dividing_time = await myContract.methods.Dividing_times(coinbase).call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'})
@@ -95,9 +97,8 @@ if (typeof web3 !== 'undefined') {
     printPostsToConsole();
 
 
-    function invest(){
-      myContract.methods.invest().send({from: coinbase, value: "100000000000000000"}).then(function(receipt){
-          alert();
+    function quite(){
+      myContract.methods.quit().send({from: coinbase}).then(function(receipt){          
         location.reload();
       });
     }

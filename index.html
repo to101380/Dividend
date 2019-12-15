@@ -49,8 +49,8 @@
 				    <blockquote class="blockquote mb-0 column" >
 				      <div class="ETH-LOGO " ></div>				      	
 				      <div class="card_p">
-				      	<p id="Interest_number"></p>
-				      	<span class="subtitle">日利率</span> 
+				      	<p><span id="Interest_number"></span> 日利率</p>
+				      	
 				      </div> 
 				      <label class="field a-field a-field_a2 page__field table_distant" >
                          <div class="input-group mb-3" id="ticket" data-price="141">
@@ -99,16 +99,32 @@
 						<a href="">合約地址</a>
 					</div>
 					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">	
-						<div class="container-fluid user_info">						
+						<div class="container-fluid user_info">												
 						  <p>我的地址：<div class="info" id="my_address"></div></p>
-						  <p>我的餘額：<span class="info_a1" id="my_balance">1510.235</span>ETH</p>    
-    					  <hr/>
-    					  <p>投入本金:<span id="capital"></span> ETH</p>
-    					  <p>利息：<span id="user_interest"></span> 日利率</p>   
-    					  <p>已收到的回饋枚數:<span id="profit"></span> ETH</p> 	
-    					  <p>區塊高度:<span id="block_height"></span></p>
-    					  <p>交易完成時間:<span id="time"></span></p>  						
+						  <p>我的餘額：<span class="info" id="my_balance">1510.235</span>ETH</p>  
+    					  <table class="table table-sm table_distant text-left">							 
+						    <tbody>
+								<tr>
+								   <th scope="row"><p>投入本金:</p></th>
+								   <td><p><span class="info" id="capital"></span> ETH</p></td>						      						  
+								</tr>
+								<tr>
+								   <th scope="row"><p>利息：</p></th>
+								   <td><p><span class="info" id="user_interest"></span> 日利率 </p></td>							      			
+								</tr>	
+								<tr>
+								   <th scope="row"><p>已收到的回饋枚數:</p></th>
+								   <td><p><span class="info" id="profit"></span> ETH</p></td>				      						     
+								</tr>
+								<tr>
+								   <th scope="row"><p>區塊高度:</p></th>
+								   <td><p><span class="info" id="block_height"></span></p></td>				      						     
+								</tr>							   
+							</tbody>
+					   	  </table> 					   	
+    					  <p>交易完成時間:<span class="info" id="time"></span></p>  						
 						</div>
+						<button type="button" class="btn btn-danger" onclick="quite();">我要退出</button>
 					</div>
 				</div>
 		    </div>		    

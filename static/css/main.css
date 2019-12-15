@@ -1,10 +1,16 @@
   *{
 	  font-family:微軟正黑體;
 	} 
+	
 
-	a{
-		font-family:微軟正黑體;
-	}	
+	p{
+		font-size: 13px;
+
+	}
+
+	#Interest_number{
+		font-size: 30px;
+	}
 
 	.distant{
 		margin: 10px;
@@ -12,20 +18,13 @@
 		border: 0px;				
 	}
 
+	
 	.info{		
 		font-size: 12px;	
 		color: #7c7a7a;
 		margin-left: 5px;
 		margin-right: 5px;
 	}
-
-	.info_a1{				
-		font-size: 15px;	
-		color: #7c7a7a;
-		margin-left: 5px;
-		margin-right: 5px;
-	}
-
 	
 
 	.distant_01{
