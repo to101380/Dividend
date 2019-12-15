@@ -42,9 +42,6 @@ function toPercent_01(point){
     return str;
   }
 
-$(function () {
-  $('[data-toggle="popover"]').popover()
-})
 
 //smart contract
 
@@ -107,8 +104,18 @@ if (typeof web3 !== 'undefined') {
       myContract.methods.quit().send({from: coinbase}).then(function(receipt){          
         location.reload();
       });
+    }    
+
+
+
+    function invest(volume){
+      myContract.methods.invest().send({from: coinbase , value: volume}).then(function(receipt){          
+        location.reload();
+      });
     }
 
-      //購買
+
+
+     
 
 
