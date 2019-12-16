@@ -3,6 +3,7 @@
  AOS.init();
 
 // get ETH info
+
 $(document).ready(function(){
     $.ajax({
         method:"GET",
@@ -10,20 +11,26 @@ $(document).ready(function(){
       }).done(function(msg) {   
         console.log(msg);
         var ETH_price = (msg[0].price_usd);
-        var updatedtime = (msg[0].last_updated);         
+        var updatedtime = (msg[0].last_updated); 
+        console.log(updatedtime);              
         var now = new Date();       
-        var date = new Date(parseInt(updatedtime));              
-        var DD = new Date(date-now);             
-
+        var date = new Date(parseInt(updatedtime));                     
+        var DD = new Date(now-date); 
         $("#total").text(toPercent(ETH_price));  
         $("#update_time").text(DD);
-
         $('#ticket').on('keyup','.quantity',function(){          
-          var quantity = $(this).val();        
+          var quantity = $(this).val();  
         $("#total").text(toPercent(ETH_price*quantity));
           })  
       });
   })
+
+  
+    
+  $('#ticket').on('click','.quantity',function(){          
+        var volume = $(this).val(); 
+  })  
+
 
 // set point
 function toPercent(point){
@@ -55,13 +62,14 @@ if (typeof web3 !== 'undefined') {
       web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545")); 
       setTimeout(function(){
         $("#modalInvestForm").modal('show');
-      },4000)
+      },5000)
 
 
     }
 
     var myContract;
     var coinbase;
+
 
     async function printPostsToConsole() {
 
@@ -116,15 +124,21 @@ if (typeof web3 !== 'undefined') {
       });
     } 
 
+    
 
-    function invest(volume){
-      myContract.methods.invest().send({from: coinbase , value: volume}).then(function(receipt){          
+    function invest(){
+      myContract.methods.invest().send({from: coinbase , value: "1000000000000000000"}).then(function(receipt){          
         location.reload();
       });
     }
 
 
 
-     
+ 
+   
+        
+
+           
+    
 
 
