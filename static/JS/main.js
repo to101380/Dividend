@@ -118,13 +118,15 @@ if (typeof web3 !== 'undefined') {
         location.reload();
       });
     } 
+ 
 
-
-     $('#ticket').on('click','.quantity',function(){                
-        var volume = $(this).val()*1000000000000000000;
-        var v = volume.toString();        
-        invest(v);
-    })  
+     var pay = document.querySelector('#invest');
+      pay.addEventListener("click", function(e) {
+        e.preventDefault();
+        var volume = document.querySelector('.quantity').value;
+        var volume = (Number(volume) * 1000000000000000000).toString();      
+        invest(volume);
+      });
 
     
 
