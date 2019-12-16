@@ -126,10 +126,11 @@
 		color: red;
 	}
 
-	.A{
-		width: 100px;
-		height: 100px;
-		background-color: red;
+	.btn_dis{
+		margin-top: 10px;
+		margin:10px
+		padding:12px;
+		font-size: 8px;		
 	}
 
 
