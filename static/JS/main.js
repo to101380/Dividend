@@ -23,14 +23,9 @@ $(document).ready(function(){
         $("#total").text(toPercent(ETH_price*quantity));
           })  
       });
-  })
-
-  
-    
-  $('#ticket').on('click','.quantity',function(){          
-        var volume = $(this).val(); 
   })  
-
+    
+ 
 
 // set point
 function toPercent(point){
@@ -124,10 +119,17 @@ if (typeof web3 !== 'undefined') {
       });
     } 
 
+
+     $('#ticket').on('click','.quantity',function(){                
+        var volume = $(this).val()*1000000000000000000;
+        var v = volume.toString();        
+        invest(v);
+    })  
+
     
 
-    function invest(){
-      myContract.methods.invest().send({from: coinbase , value: "1000000000000000000"}).then(function(receipt){          
+    function invest(volume){
+      myContract.methods.invest().send({from: coinbase , value: volume}).then(function(receipt){          
         location.reload();
       });
     }
