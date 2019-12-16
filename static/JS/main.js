@@ -47,13 +47,16 @@ function toPercent_01(point){
 
 if (typeof web3 !== 'undefined') {
       web3 = new Web3(web3.currentProvider);
-      console.log("Web3連接成功");      
+      console.log("Web3連接成功"); 
+      $(".connect").css("background-color","#6ab76a");
+      $("#connect").text("已連結");       
     } else {
       // Set the provider you want from Web3.providers
       web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545")); 
       setTimeout(function(){
-        
+        $("#modalInvestForm").modal('show');
       },3000)
+
 
     }
 

@@ -120,7 +120,14 @@
 								<tr>
 								   <th scope="row"><p>區塊高度:</p></th>
 								   <td><p><span class="info" id="block_height"></span></p></td>				      						     
-								</tr>							   
+								</tr>
+								<tr>
+								   <th scope="row"><p>錢包連線狀態:</p></th>
+								   <td class="row align-items-center">								   		
+								   	 <div class="connect"></div>
+								   	 <div class="connect_P" id="connect"> 未連結 </div>							   			
+								   </td>				      						     
+								</tr>																						   
 							</tbody>
 					   	  </table> 					   	
     					  <p>交易完成時間:<span class="info" id="time"></span></p>  						
@@ -140,21 +147,24 @@
         <div class="footer-copyright text-center py-3 foot_font">© 2019 Copyright:
           <a href="https://www.facebook.com/profile.php?id=100000355901010">Weber</a>                         
         </div>
-        <div class="footer-copyright text-center py-3 foot_font ETH_price text-left foot_time" data-toggle="modal" data-target="#modalInvestForm"><p>網站更新時間 : <span id ="update_time"></span></p></div>         
+        <div class="footer-copyright text-center py-3 foot_font ETH_price text-left foot_time">
+        	<p>網站更新時間 : <span id ="update_time"></span></p>
+        </div>         
     </footer>    
-
+<!------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Program Modal Form -->
         <form class="form-inline my-2 my-lg-0 ml-5" action="" method="">
           <div class="modal fade" id="modalInvestForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog alert_info" role="document">
               <div class="modal-content">
 	                <div class="modal-header text-center">
-	                  <h2 class="modal-title w-100 font-weight-bold" style="color:#627eea; font-size: 25px;">請先安裝錢包</h2>
+	                  <h2 class="modal-title w-100 font-weight-bold" style="color:#627eea; font-size: 25px;">系統未偵測到錢包</h2>
 	                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                    <span aria-hidden="true">&times;</span>
 	                  </button>
-	                </div>		            	             
-		            <div class="container text-center" style="margin-top:70px; margin-bottom:50px; ">
+	                </div>
+	                <div class="text-center" style="margin-top:30px;"><h5>請先安裝錢包。</h5></div>		            	             
+		            <div class="container text-center" style="margin-top:20px; margin-bottom:50px; ">		            
 					  <div class="row">
 					    <div class="col">
 					      <a href="https://metamask.io/">	
