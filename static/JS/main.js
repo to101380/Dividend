@@ -55,7 +55,7 @@ if (typeof web3 !== 'undefined') {
       web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545")); 
       setTimeout(function(){
         $("#modalInvestForm").modal('show');
-      },3000)
+      },4000)
 
 
     }
@@ -95,12 +95,15 @@ if (typeof web3 !== 'undefined') {
       var time = new Date(now-trans_time);
       $("#time").text(time);   
 
+      if(user_info[0] != 0){
+        $(".sible").css("visibility","visible");
+      }
+
       var son = await myContract.methods.son().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
       var mon = await myContract.methods.mon().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
       $("#de_capital").text(toPercent_A(web3.utils.fromWei(user_info[0])*(1-(son/mon))));  
 
-      var Dividing_time = await myContract.methods.Dividing_times(coinbase).call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'})
-      console.log(parseInt(Dividing_time),parseInt( web3.utils.fromWei(user_info[0])),parseFloat(1/user_info[1])) ;                   
+      var Dividing_time = await myContract.methods.Dividing_times(coinbase).call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'})                        
       $("#profit").text(toPercent_A(parseInt(Dividing_time)*parseFloat( web3.utils.fromWei(user_info[0]))*parseFloat(1/user_info[1])));
     };
 

@@ -127,8 +127,9 @@
 	}
 	
 	.revert{
-		margin: 8px;
-		color: red;
+		margin-left: 15px;
+		margin: 10px;
+		color: #975057;
 	}
 
 	.btn_dis{
@@ -139,7 +140,7 @@
 	}
 
 	.guide{				
-		border-radius: 15px;
+		border-radius: 5px;
 		background-color: #cce5ff;
 		color: #5f8dbe;
 		margin: 15px;
@@ -161,6 +162,20 @@
 		color: #7c7a7a;
 	}
 
+	.quite_info{
+		border-radius: 5px;
+		background-color: #f8d7da;
+		padding: 20px;
+		margin-right:5px;
+		margin-left:5px;
+		box-shadow: 3px 3px 3px rgba(0%,0%,0%,0.10);
+
+	}
+
+	.sible {
+  		visibility: hidden;
+	}
+
 
 
 @media (max-width: 375px) {
@@ -177,7 +192,7 @@
 		font-family:微軟正黑體;
 		font-size: 12px;
 
-	}	
+	}
 
 
  }
