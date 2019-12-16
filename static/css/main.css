@@ -126,6 +126,12 @@
 		color: red;
 	}
 
+	.A{
+		width: 100px;
+		height: 100px;
+		background-color: red;
+	}
+
 
 
 @media (max-width: 375px) {
