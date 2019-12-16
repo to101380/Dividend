@@ -102,7 +102,7 @@
 					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">	
 						<div class="container-fluid user_info">												
 						  <p>我的地址：<div class="info" id="my_address"></div></p>
-						  <p>我的餘額：<span class="info" id="my_balance">1510.235</span>ETH</p>  
+						  <p>我的餘額：<span class="info" id="my_balance"></span>ETH</p>  
     					  <table class="table table-sm table_distant text-left">							 
 						    <tbody>
 								<tr>
@@ -134,8 +134,17 @@
 						</div>
 						
 						<div class="row quite_info sible">
-							<button type="button" class="btn btn-danger" onclick="quite();">我要退出</button>						    
-							<p class="revert">目前退出扣除的金額為: <span id="de_capital"></span> ETH</p>									
+							<div class="container">
+							  <div class="row">
+							    <div class="col-sm text-center">
+							      <button type="button" class="btn btn-danger" onclick="quite();" style="margin-top: 30px;">我要退出</button>	
+							    </div>
+							    <div class="col-sm text-left">
+							      <p class="revert">目前退出扣除的金額為: <span id="de_capital" style="font-weight:bold;"></span> ETH</p></hr>
+							      <p class="revert">您將會拿回: <span id="de_capital_02" style="font-weight:bold;"></span> ETH</p>		
+							    </div>
+							  </div>							  
+							</div>
 						</div>																		
 					</div>
 				</div>

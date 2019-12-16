@@ -104,7 +104,9 @@ if (typeof web3 !== 'undefined') {
 
       var son = await myContract.methods.son().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
       var mon = await myContract.methods.mon().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
-      $("#de_capital").text(toPercent_A(web3.utils.fromWei(user_info[0])*(1-(son/mon))));  
+      $("#de_capital").text(toPercent_A(web3.utils.fromWei(user_info[0])*(1-(son/mon))));
+      $("#de_capital_02").text(toPercent_A(web3.utils.fromWei(user_info[0])*((son/mon))));
+      
 
       var Dividing_time = await myContract.methods.Dividing_times(coinbase).call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'})                        
       $("#profit").text(toPercent_A(parseInt(Dividing_time)*parseFloat( web3.utils.fromWei(user_info[0]))*parseFloat(1/user_info[1])));

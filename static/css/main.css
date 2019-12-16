@@ -197,4 +197,10 @@
 
  }
 
+@media (max-width: 375px) {
+	
+	.revert{
+		font-size: 9px;
+	} 
+
  
