@@ -104,21 +104,27 @@
 		font-size: 13px;
 	}
 
+	.alert_info{
+		box-shadow: 3px 3px 3px rgba(0%,0%,0%,0.10);
+		border: solid 0px;
+	}
+
+
 	.foot_font{
 		font-size: 10px;
 		color: #e5e5e5;		
 	}
-
-	.revert{
-		margin: 3px;
-		color: red;
-	}
+	
 
 	.foot_time{
 		margin-left:10px;
 		margin-right:10px; 
 	}
 	
+	.revert{
+		margin: 3px;
+		color: red;
+	}
 
 
 

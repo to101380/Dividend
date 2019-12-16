@@ -47,10 +47,14 @@ function toPercent_01(point){
 
 if (typeof web3 !== 'undefined') {
       web3 = new Web3(web3.currentProvider);
-      console.log("Web3連接成功");
+      console.log("Web3連接成功");      
     } else {
       // Set the provider you want from Web3.providers
-      web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));     
+      web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545")); 
+      setTimeout(function(){
+        
+      },3000)
+
     }
 
     var myContract;
@@ -104,8 +108,7 @@ if (typeof web3 !== 'undefined') {
       myContract.methods.quit().send({from: coinbase}).then(function(receipt){          
         location.reload();
       });
-    }    
-
+    } 
 
 
     function invest(volume){
