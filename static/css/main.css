@@ -122,7 +122,7 @@
 	}
 	
 	.revert{
-		margin: 3px;
+		margin: 8px;
 		color: red;
 	}
 
@@ -131,6 +131,15 @@
 		margin:10px
 		padding:12px;
 		font-size: 8px;		
+	}
+
+	.guide{				
+		border-radius: 15px;
+		background-color: #cce5ff;
+		color: #5f8dbe;
+		margin: 15px;
+		padding: 20px;
+
 	}
 
 
