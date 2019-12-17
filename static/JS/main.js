@@ -72,7 +72,6 @@ if (typeof web3 !== 'undefined') {
       coinbase = await web3.eth.getCoinbase();      
       var balance = await web3.eth.getBalance(coinbase);
 
-
       $("#my_address").text(coinbase);
       $("#my_balance").text(toPercent_A(web3.utils.fromWei(balance)));  //wei 轉換成 ether web3.utils.fromWei()     
 
@@ -143,9 +142,8 @@ if (typeof web3 !== 'undefined') {
     }
 
 
-    //取得合約地址
+    //取得合約地址並轉成連結
     function contract_ad() {
-
     var name = "合約地址";  
     var str = contract_address;     
     var result = name.link("https://rinkeby.etherscan.io/address/"+str);
@@ -160,16 +158,7 @@ if (typeof web3 !== 'undefined') {
     var str = block_height;  
     var result = str.link("https://rinkeby.etherscan.io/block/"+str);
     document.getElementById("block_height").innerHTML = result;   
-      }
-      
-
-
-
+      }      
  
-   
-        
-
-           
-    
-
+          
 
