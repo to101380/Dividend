@@ -17,6 +17,10 @@
 		font-size: 30px;
 	}
 
+	#balance_info{
+		color: red;
+	}
+
 	.distant{
 		margin: 10px;
 		margin-top:100px; 
@@ -165,7 +169,7 @@
 	.quite_info{
 		border-radius: 5px;
 		background-color: #f8d7da;
-		padding: 20px;
+		padding: 10px;		
 		margin-right:5px;
 		margin-left:5px;
 		box-shadow: 3px 3px 3px rgba(0%,0%,0%,0.10);
@@ -176,6 +180,17 @@
   		visibility: hidden;
 	}
 
+
+
+
+@media (max-width: 320px) {
+
+	.info{
+		width: 100px;
+		overflow: auto;	
+	}
+
+}	
 
 
 @media (max-width: 375px) {
@@ -194,13 +209,26 @@
 
 	}
 
-
- }
-
-@media (max-width: 375px) {
-	
 	.revert{
 		font-size: 9px;
 	} 
 
+ }
+
+
+@media (max-width: 575px) {
+
+	.quite_info{
+		border-radius: 5px;
+		padding-top: 20px;		
+	}
+
+}
+
+
+	
+
+
+	
+	
  

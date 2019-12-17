@@ -64,19 +64,21 @@ if (typeof web3 !== 'undefined') {
 
     var myContract;
     var coinbase;
-
+    var block_height;
+    var contract_address;
 
     async function printPostsToConsole() {
 
-      
       coinbase = await web3.eth.getCoinbase();      
       var balance = await web3.eth.getBalance(coinbase);
+
+
       $("#my_address").text(coinbase);
-      $("#my_balance").text(toPercent_A(web3.utils.fromWei(balance)));  //wei 轉換成 ether web3.utils.fromWei()
+      $("#my_balance").text(toPercent_A(web3.utils.fromWei(balance)));  //wei 轉換成 ether web3.utils.fromWei()     
 
-      var contract_address = "0x9130891B991b630b6F41A10cF131b83c8F85F1A6";
+      contract_address = "0x9130891B991b630b6F41A10cF131b83c8F85F1A6";
       var contract_abi = [{"constant":true,"inputs":[],"name":"count","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"son","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"Safe_trans","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_son","type":"uint256"},{"name":"_mon","type":"uint256"}],"name":"Set_quota","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"a","type":"uint256"},{"name":"b","type":"uint256"}],"name":"distribute","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"userinfo","outputs":[{"name":"amount","type":"uint256"},{"name":"user_profit","type":"uint256"},{"name":"block_number","type":"uint256"},{"name":"timestamp","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"Dividing_times","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"querybalance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"key","type":"uint256"}],"name":"Set_Interest","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getInterest","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"mon","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"invest","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"Amount_invested","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"quit","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}];
-
+      contract_ad();
       myContract = new web3.eth.Contract(contract_abi, contract_address);
 
       //取得合約餘額 
@@ -91,12 +93,13 @@ if (typeof web3 !== 'undefined') {
 
       var user_info = await myContract.methods.userinfo(coinbase).call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
       $("#capital").text(web3.utils.fromWei(user_info[0]));
-      $("#user_interest").text(toPercent_01(1/user_info[1]));      
-      $("#block_height").text(user_info[2]);
+      $("#user_interest").text(toPercent_01(1/user_info[1]));     
+      block_height = user_info[2];      
       var trans_time = new Date(parseInt(user_info[3]));             
       var now= new Date();    
       var time = new Date(now-trans_time);
       $("#time").text(time);   
+      block_link();
 
       if(user_info[0] != 0){
         $(".sible").css("visibility","visible");
@@ -115,13 +118,14 @@ if (typeof web3 !== 'undefined') {
     printPostsToConsole();
 
 
+    //退出
     function quite(){
       myContract.methods.quit().send({from: coinbase}).then(function(receipt){          
         location.reload();
       });
     } 
  
-
+    //input接收輸入的值，並傳到錢包
      var pay = document.querySelector('#invest');
       pay.addEventListener("click", function(e) {
         e.preventDefault();
@@ -137,6 +141,27 @@ if (typeof web3 !== 'undefined') {
         location.reload();
       });
     }
+
+
+    //取得合約地址
+    function contract_ad() {
+
+    var name = "合約地址";  
+    var str = contract_address;     
+    var result = name.link("https://rinkeby.etherscan.io/address/"+str);
+    document.getElementById("smart_contract").innerHTML = result;   
+      }
+
+
+
+
+    //將鏈上捉到的區塊高度加入連結參數，並轉成連結
+    function block_link() {
+    var str = block_height;  
+    var result = str.link("https://rinkeby.etherscan.io/block/"+str);
+    document.getElementById("block_height").innerHTML = result;   
+      }
+      
 
 
 

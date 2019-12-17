@@ -59,7 +59,8 @@
 							   <span class="input-group-text" id="basic-addon2">ETH</span><button type="button" class="btn btn-primary" id="invest" >投資</button>
 							</div>																			
 						 </div>	
-						 <div class="ETH_price text-left"><p>匯率 : <span id ="total"></span> USD</p></div>					 					 
+						 <div class="ETH_price text-left"><p>匯率 : <span id ="total"></span> USD</p></div>
+						 <div class="ETH_price text-left"><p><span id ="balance_info"></span></p></div>					 				 
                        </label>                       
 					   <table class="table table-sm table_distant text-left">							 
 							<tbody>
@@ -93,11 +94,12 @@
 				<div class="tab-content" id="myTabContent">
 					<div class="tab-pane fade show active user_info" id="home" role="tabpanel" aria-labelledby="home-tab" data-aos="fade-up" >
 						<ul>
-							<li> <p>投入的ETH，每日會按照當初投入的枚數發放利息。</p></li>
+							<li> <p>投入的ETH，每日會按照投入本金發放利息。</p></li>
 							<li> <p>利息會直接打回錢包。</p></li>	
-							<li> <p>可以隨時退出，退出可以拿回本金，但平台會收手續費。</p></li>													
-						</ul>
-						<a href="">合約地址</a>
+							<li> <p>可隨時退出，退出可拿回部分本金。</p></li>
+							<li> <p>退出拿回的本金比會按照ETH行情調整。</p></li>
+							<li> <p id="smart_contract"></p></li>													
+						</ul>						
 					</div>
 					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">	
 						<div class="container-fluid user_info">												
@@ -119,7 +121,7 @@
 								</tr>
 								<tr>
 								   <th scope="row"><p>區塊高度:</p></th>
-								   <td><p><a href="https://rinkeby.etherscan.io/block/"><span class="info" id="block_height"></span></p></a></td>				      						     
+								   <td><p><span class="info" id="block_height"></span></p></td>				      						     
 								</tr>
 								<tr>
 								   <th scope="row"><p>錢包連線狀態:</p></th>
@@ -135,16 +137,16 @@
 						
 						<div class="row quite_info sible">
 							<div class="container">
-							  <div class="row">
-							    <div class="col-sm text-center">
-							      <button type="button" class="btn btn-danger" onclick="quite();" style="margin-top: 30px;">我要退出</button>	
+							  <div class="row align-items-center">
+							    <div class="col-sm text-center ">
+							      <button type="button" class="btn btn-danger" onclick="quite();" >我要退出</button>	
 							    </div>
 							    <div class="col-sm text-left">
 							      <p class="revert">目前退出扣除的金額為: <span id="de_capital" style="font-weight:bold;"></span> ETH</p></hr>
 							      <p class="revert">您將會拿回: <span id="de_capital_02" style="font-weight:bold;"></span> ETH</p>		
 							    </div>
-							  </div>							  
-							</div>
+							  </div>				  
+							</div>						
 						</div>																		
 					</div>
 				</div>
@@ -158,7 +160,7 @@
           <a href="https://www.facebook.com/profile.php?id=100000355901010">Weber</a>                         
         </div>
         <div class="footer-copyright text-center py-3 foot_font ETH_price text-left foot_time">
-        	<p>網站更新時間 : <span id ="update_time"></span></p>
+        	<p>網站更新時間 : <span id ="update_time" ></span></p>
         </div>         
     </footer>    
 <!------------------------------------------------------------------------------------------------------------------------------------------>
