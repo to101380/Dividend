@@ -13,12 +13,11 @@ $(document).ready(function(){
         var ETH_price = (msg[0].price_usd);
         var updatedtime = (msg[0].last_updated);
         var unixTimestamp = new Date(parseInt(updatedtime)* 1000) ;      
-        $("#update_time").text(unixTimestamp);           
-       
-        $("#total").text(toPercent(ETH_price));  
-        $("#update_time").text(DD);
+        $("#update_time").text(unixTimestamp);          
+        $("#total").text(toPercent(ETH_price)); 
+
         $('#ticket').on('keyup','.quantity',function(){          
-          var quantity = $(this).val();  
+          var quantity = $(this).val();
         $("#total").text(toPercent(ETH_price*quantity));
           })  
       });
