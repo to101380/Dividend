@@ -11,11 +11,10 @@ $(document).ready(function(){
       }).done(function(msg) {   
         console.log(msg);
         var ETH_price = (msg[0].price_usd);
-        var updatedtime = (msg[0].last_updated); 
-        console.log(updatedtime);              
-        var now = new Date();       
-        var date = new Date(parseInt(updatedtime));                     
-        var DD = new Date(now-date); 
+        var updatedtime = (msg[0].last_updated);
+        var unixTimestamp = new Date(parseInt(updatedtime)* 1000) ;      
+        $("#update_time").text(unixTimestamp);           
+       
         $("#total").text(toPercent(ETH_price));  
         $("#update_time").text(DD);
         $('#ticket').on('keyup','.quantity',function(){          
@@ -93,11 +92,9 @@ if (typeof web3 !== 'undefined') {
       var user_info = await myContract.methods.userinfo(coinbase).call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
       $("#capital").text(web3.utils.fromWei(user_info[0]));
       $("#user_interest").text(toPercent_01(1/user_info[1]));     
-      block_height = user_info[2];      
-      var trans_time = new Date(parseInt(user_info[3]));             
-      var now= new Date();    
-      var time = new Date(now-trans_time);
-      $("#time").text(time);   
+      block_height = user_info[2];     
+      var unixTimestamp = new Date(parseInt(user_info[3])* 1000) ;      
+      $("#time").text(unixTimestamp);
       block_link();
 
       if(user_info[0] != 0){
