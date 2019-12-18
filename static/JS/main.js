@@ -85,6 +85,7 @@ if (typeof web3 !== 'undefined') {
 
       var Interest = await myContract.methods.getInterest().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
       $("#Interest_number").text(toPercent_01(1/Interest));
+      $("#profit_year").text(toPercent_01((1/Interest)*365));
 
       var count = await myContract.methods.count().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
       $("#count").text(count);   
