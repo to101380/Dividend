@@ -145,7 +145,7 @@ if (typeof web3 !== 'undefined') {
     function contract_ad() {
     var name = "合約地址";  
     var str = contract_address;     
-    var result = name.link("https://rinkeby.etherscan.io/address/"+str);    
+    var result = name.link("https://etherscan.io/address/"+str);    
     document.getElementById("smart_contract").innerHTML = result;   
       }
 
