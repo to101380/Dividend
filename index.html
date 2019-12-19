@@ -95,15 +95,43 @@
 					</li>					
 				</ul>
 				<div class="tab-content" id="myTabContent">
-					<div class="tab-pane fade show active user_info" id="home" role="tabpanel" aria-labelledby="home-tab" data-aos="fade-up" >
-						<ul>
-							<li> <p>投入的ETH，每日會按照投入的本金發放相對應的利息。</p></li>
-							<li> <p>利息會直接打回錢包。</p></li>	
-							<li> <p>可隨時退出，退出可拿回部分本金。</p></li>
-							<li> <p>退出拿回的本金比會按照ETH行情調整。</p></li>
-							<li> <p id="smart_contract"></p></li>													
-						</ul>						
+					<div class="tab-pane fade show active " id="home" role="tabpanel" aria-labelledby="home-tab" data-aos="fade-up">
+						<div class="user_info">
+							<ul>
+								<li> <p>投入的ETH，每日會按照投入的本金發放相對應的利息。</p></li>
+								<li> <p>利息會直接打回錢包。</p></li>	
+								<li> <p>可隨時退出，退出可拿回部分本金。</p></li>
+								<li> <p>退出拿回的本金比會按照ETH行情調整。</p></li>
+								<li> <p id="smart_contract"></p></li>													
+							</ul>
+						</div>
+						<div class="user_info">
+							<div class="column-left">								
+								<div class="row align-items-center aa" style="margin: 20px;">
+									<img class="shad" src="https://upload.cc/i1/2019/12/20/AtPLMd.png" style="margin-right: 35px;">		
+									<div class="column-left aa">
+										<h5>安全</h5>
+										<p class="intro">智能合約的資安由專業團隊審計，並針對各種攻擊狀況進行模擬，千錘百鍊出安全的智能合約。</p>
+									</div>
+								</div>
+								<div class="row align-items-center aa" style="margin: 20px;">
+									<img class="shad_01" src="https://upload.cc/i1/2019/12/20/hC7U3c.png"  style="margin-right: 35px;">
+									<div class="column-left aa">
+										<h5>簡單</h5>
+										<p class="intro">介面簡潔乾淨，操作簡單，一鍵投資，一鍵退出。</p>										
+									</div>
+								</div>
+								<div class="row align-items-center aa" style="margin: 20px;">
+									<img class="shad_02" src="https://upload.cc/i1/2019/12/20/qjTo2A.png"  style="margin-right: 35px;">
+									<div class="column-left aa">
+										<h5>開放</h5>
+										<p class="intro">區塊鏈上的資料在<span id="etherscan"></span>上都查詢的到，包括交易紀錄，交易枚數以及交易時間</p>			
+									</div>
+								</div>
+							</div>							
+						</div>																
 					</div>
+					
 					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">	
 						<div class="container-fluid user_info">												
 						  <p>我的地址：<div class="info" id="my_address"></div></p>

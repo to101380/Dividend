@@ -143,10 +143,13 @@ if (typeof web3 !== 'undefined') {
 
     //取得合約地址並轉成連結
     function contract_ad() {
-    var name = "合約地址";  
+    var name = "合約地址"; 
+    var etherlink = "Etherscan"; 
     var str = contract_address;     
-    var result = name.link("https://etherscan.io/address/"+str);    
-    document.getElementById("smart_contract").innerHTML = result;   
+    var result = name.link("https://etherscan.io/address/"+str); 
+    var result_02 = etherlink.link("https://etherscan.io/address/"+str);     
+    document.getElementById("smart_contract").innerHTML = result;
+    document.getElementById("etherscan").innerHTML = result_02;    
       }
 
 

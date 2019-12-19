@@ -1,5 +1,6 @@
   *{
 	  font-family:微軟正黑體;
+	  /*border: solid 1px ;	*/  
 	} 
 	
 
@@ -12,6 +13,7 @@
 		font-family:微軟正黑體;
 		color: #939496;
 	}
+	
 
 	#Interest_number{
 		font-size: 30px;
@@ -36,6 +38,23 @@
 		margin: 10px;
 		margin-top:100px; 		
 	}
+
+	.shad{
+		border-radius: 50%;	
+		box-shadow: 0px 0px 10px #13c3b0;				
+	}
+
+	.shad_01{
+		border-radius: 50%;	
+		box-shadow: 0px 0px 10px #5c9dff;				
+	}
+
+	.shad_02{
+		border-radius: 50%;	
+		box-shadow: 0px 0px 10px #f4b053;				
+	}
+
+	
 
 	.ETH-LOGO{
 		width: 100px;
@@ -107,6 +126,10 @@
 		color: #747579;
 		font-family:微軟正黑體;
 		font-size: 13px;
+	}
+
+	.intro{
+		width: 210px;
 	}
 
 	.alert_info{
@@ -247,6 +270,66 @@
 	} 
 
  }
+
+ @media (max-width: 414px) {
+
+ 	.aa{
+
+ 		display: flex;
+ 		flex-direction: column;
+ 		align-items:center;
+ 		justify-content: center;
+ 		margin: 10px; 		
+ 	} 	
+
+ 	.intro{
+		width: 170px;
+	}
+
+	.shad{
+		margin-left: 30px;
+	}
+
+	.shad_01{
+		margin-left: 30px;
+	}
+
+	.shad_02{
+		margin-left: 30px;
+	}
+	
+}
+
+
+ @media (min-width: 993px)and (max-width: 1199px) {
+
+ 	.aa{
+
+ 		display: flex;
+ 		flex-direction: column;
+ 		align-items:center;
+ 		justify-content: center;
+ 		margin: 30px; 		
+ 	} 	
+
+ 	.intro{
+		width: 200px;
+	}
+
+	.shad{
+		margin-left: 30px;
+	}
+
+	.shad_01{
+		margin-left: 30px;
+	}
+
+	.shad_02{
+		margin-left: 30px;
+	}
+	
+}
+
 
 
 @media (max-width: 575px) {
