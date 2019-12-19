@@ -53,8 +53,7 @@
 				    <blockquote class="blockquote mb-0 column" >
 				      <div class="ETH-LOGO " ></div>				      	
 				      <div class="card_p">
-				      	<p><span id="Interest_number"></span> 日利率</p>
-				      	
+				      	<p><span id="Interest_number"></span> 日利率</p>				      	
 				      </div> 
 				      <label class="field a-field a-field_a2 page__field table_distant" >
                          <div class="input-group mb-3" id="ticket" data-price="141">
@@ -64,7 +63,7 @@
 							</div>																			
 						 </div>	
 						 <div class="ETH_price text-left"><p>匯率 : <span id ="total"></span> USD</p></div>
-						 <div class="ETH_price text-left"><p><span id ="balance_info"></span></p></div>					 				 
+						 <div class="ETH_price text-left"><p>我的餘額 : <span id ="balance_info"></span> ETH </p></div>					 				 
                        </label>                       
 					   <table class="table table-sm table_distant text-left">							 
 							<tbody>
@@ -157,7 +156,29 @@
 		    </div>		    
 		  </div>
 		</div>				
-	</section>			
+	</section>
+	<div class="loading">
+		<div class="loader loader--style8" title="7">
+		  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		     width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+		    <rect x="0" y="10" width="4" height="10" fill="#333" opacity="0.2">
+		      <animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0s" dur="0.6s" repeatCount="indefinite" />
+		      <animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0s" dur="0.6s" repeatCount="indefinite" />
+		      <animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0s" dur="0.6s" repeatCount="indefinite" />
+		    </rect>
+		    <rect x="8" y="10" width="4" height="10" fill="#333"  opacity="0.2">
+		      <animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+		      <animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+		      <animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+		    </rect>
+		    <rect x="16" y="10" width="4" height="10" fill="#333"  opacity="0.2">
+		      <animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+		      <animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+		      <animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+		    </rect>
+		  </svg>
+		</div>
+	</div>			
 	<footer class="page-footer font-small indigo py-4">
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3 foot_font">© 2019 Copyright:

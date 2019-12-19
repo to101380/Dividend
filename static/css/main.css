@@ -15,11 +15,7 @@
 
 	#Interest_number{
 		font-size: 30px;
-	}
-
-	#balance_info{
-		color: red;
-	}
+	}	
 
 	.distant{
 		margin: 10px;
@@ -176,8 +172,45 @@
 
 	}
 
+
+
+	/*退出的可見度*/
+
 	.sible {
   		visibility: hidden;
+	}
+
+	.loading {
+	  position: fixed;	  
+	  height: 200px;	  
+	  width: 200px;
+	  top:50%;
+      left:50%; 
+      margin-left:-25px;
+      margin-top:-25px;	    
+	}
+
+
+
+	/*載入動畫*/
+
+	.loader{
+		  margin: 0 0 2em;
+		  height: 100px;
+		  width: 20%;
+		  text-align: center;
+		  padding: 1em;
+		  margin: 0 auto 1em;
+		  display: inline-block;
+		  vertical-align: top;
+	}	
+
+	/*
+	  Set the color of the icon
+	*/
+	svg path,
+	svg rect{
+	  fill: #627eea;
 	}
 
 
