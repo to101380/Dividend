@@ -153,7 +153,7 @@ if (typeof web3 !== 'undefined') {
     //將鏈上捉到的區塊高度加入連結參數，並轉成連結
     function block_link() {
     var str = block_height;  
-    var result = str.link("https://rinkeby.etherscan.io/block/"+str);
+    var result = str.link("https://etherscan.io/block/"+str);
     document.getElementById("block_height").innerHTML = result;   
       }      
  
