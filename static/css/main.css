@@ -1,6 +1,6 @@
   *{
 	  font-family:微軟正黑體;
-	  /*border: solid 1px ;	*/  
+	  /*border: solid 1px ;*/	  
 	} 
 	
 
@@ -27,6 +27,15 @@
 
 	
 	.info{		
+		font-size: 12px;	
+		color: #7c7a7a;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+
+	.info_propose{
+		width: 100px;
+		overflow: auto;
 		font-size: 12px;	
 		color: #7c7a7a;
 		margin-left: 5px;
@@ -193,15 +202,30 @@
 		margin-left:5px;
 		box-shadow: 3px 3px 3px rgba(0%,0%,0%,0.10);
 
-	}
-
-
+	}	
 
 	/*退出的可見度*/
 
 	.sible {
   		visibility: hidden;
 	}
+
+	.investor_info{
+		visibility: hidden;
+	}
+
+	.none_user{
+		visibility: visible;
+	}
+
+	/*.redundant{
+		display: none;
+	}
+
+	.no_duplication{
+		visibility: visible;
+	}*/
+
 
 	.loading {
 	  position: fixed;	  

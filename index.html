@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154888716-1"></script>	
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -59,7 +61,7 @@
                          <div class="input-group mb-3" id="ticket" data-price="141">
 							<input type="text" class="form-control quantity"  placeholder="輸入枚數" aria-label="Recipient's username" aria-describedby="basic-addon2" >							 
 							<div class="input-group-append">
-							   <span class="input-group-text" id="basic-addon2">ETH</span><button type="button" class="btn btn-primary" id="invest" >投資</button>
+							   <span class="input-group-text" id="basic-addon2">ETH</span><button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModalCenter" data-whatever="@mdo" id="comfirm">投資</button>
 							</div>																			
 						 </div>	
 						 <div class="ETH_price text-left"><p>匯率 : <span id ="total"></span> USD</p></div>
@@ -81,8 +83,8 @@
 								 </tr>							   
 							</tbody>
 					   </table>				      
-				    </blockquote>
-				  </div>
+				    </blockquote>				    
+				  </div>				 
 				</div>   
 		    </div>
 		    <div class="col-sm">
@@ -132,8 +134,22 @@
 						</div>																
 					</div>
 					
-					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">	
-						<div class="container-fluid user_info">												
+					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+						<div class="container-fluid user_info none_user">												
+						  <p>您目前尚未投資。</p>						  
+    					  <table class="table table-sm table_distant text-left">							 
+						    <tbody>								
+								<tr>
+								   <th scope="row"><p>錢包連線狀態:</p></th>
+								   <td class="row align-items-center">								   		
+								   	 <div class="connect"></div>
+								   	 <div class="connect_P" id="link_sucess"> 未連結 </div>							   			
+								   </td>				      						     
+								</tr>																						   
+							</tbody>
+					   	  </table> 				   				
+						</div>	
+						<div class="container-fluid user_info investor_info">												
 						  <p>我的地址：<div class="info" id="my_address"></div></p>
 						  <p>我的餘額：<span class="info" id="my_balance"></span>ETH</p>  
     					  <table class="table table-sm table_distant text-left">							 
@@ -153,6 +169,10 @@
 								<tr>
 								   <th scope="row"><p>區塊高度:</p></th>
 								   <td><p><span class="info" id="block_height"></span></p></td>				      						     
+								</tr>
+								<tr>
+								   <th scope="row"><p>我的推薦人:</p></th>
+								   <td><p class="info_propose"><span id="my_propose"></span></p></td>
 								</tr>
 								<tr>
 								   <th scope="row"><p>錢包連線狀態:</p></th>
@@ -185,7 +205,8 @@
 		  </div>
 		</div>				
 	</section>
-	<div class="loading">
+	<section>
+	<!-- <div class="loading">
 		<div class="loader loader--style8" title="7">
 		  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 		     width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
@@ -206,7 +227,74 @@
 		    </rect>
 		  </svg>
 		</div>
-	</div>			
+	</div> -->
+	</section>
+	<section>
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+	  	<div class="modal-content redundant">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel" style="color: #ef4747;">這組帳號已經使用過</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+      	  </div>      	  	
+	      <div class="modal-body">
+	        <p> 您的這組 <span id="redundant_user"></span> 已經使用過，或許您已經退出，如果需要投資，請新建一組帳號。</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">返回</button>	        
+	      </div>
+	    </div>
+	    <div class="modal-content no_duplication">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">投資資訊</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+      	  </div>
+	      <div class="modal-body">
+	        <form>
+	          	<div class="form-group">
+	          	<table class="table table-borderless table_distant text-left " style="margin-left: 22px;">
+				  <tbody>
+				    <tr>
+				      <th scope="row"><p>投資枚數 : </p></th>
+				      <td><p><span id="ready_volume">0.565461</span> ETH </p></td>
+				    </tr>
+				    <tr>
+				      <th scope="row"><p>日利率 : </p></th>
+				      <td><p><span id="ready_interest"></span></p></td>     
+				    </tr>
+				    <tr>
+				      <th scope="row"><p>年化利率 : </p></th>
+				      <td colspan="2"><p><span id="ready_year"></span></p></td>     
+				    </tr>
+				  </tbody>
+				</table>
+				<div style="margin-left: 22px; margin-right: 30px;">	 
+		            <p>
+					  <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+					    我的推薦人
+					  </a>				 
+					</p>				
+					<div class="collapse" id="collapseExample">
+					  <div>
+					   	<input type="text" class="form-control propose" id="recipient-name" placeholder=" EX : 0xbc1ADfF2EAC8dbA22d382DFADDf7e6B73aBC2334">
+					  </div>
+					</div>
+				</div>         	
+	          </div>	          
+	        </form>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+	        <button type="button" class="btn btn-primary" id="invest">投資</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>	
+	</section>	
 	<footer class="page-footer font-small indigo py-4">
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3 foot_font">© 2019 Copyright:
