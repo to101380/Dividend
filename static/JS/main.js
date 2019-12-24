@@ -1,6 +1,6 @@
 
 //AOS animate
- AOS.init();
+ // AOS.init();
 
 // get ETH info
 
