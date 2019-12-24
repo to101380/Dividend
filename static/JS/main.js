@@ -125,7 +125,10 @@ if (typeof web3 !== 'undefined') {
         $(".no_duplication").css("visibility ","visible");
       }
 
-
+      var quite_user= await myContract.methods.quite_user(coinbase).call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});      
+      if(quite_user != "0x0000000000000000000000000000000000000000"){
+          $("#already_quite").text("您的這組帳號目前已退出，為保障眾多投資者權益，如果您要再投資，請新建錢包地址。");
+      }
 
       var son = await myContract.methods.son().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
       var mon = await myContract.methods.mon().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
