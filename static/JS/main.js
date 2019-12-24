@@ -56,7 +56,7 @@ if (typeof web3 !== 'undefined') {
       web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));           
       setTimeout(function(){
         $("#modalInvestForm").modal('show');
-      },5000)
+      },1000)
       $(".redundant").css("display","none");
       $(".no_duplication").css("visibility ","visible");
     }

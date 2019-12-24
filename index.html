@@ -322,38 +322,54 @@
 <!------------------------------------------------------------------------------------------------------------------------------------------>
     <!-- Program Modal Form -->
         <form class="form-inline my-2 my-lg-0 ml-5" action="" method="">
-          <div class="modal fade" id="modalInvestForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog alert_info" role="document">
-              <div class="modal-content">
+          <div class="modal fade bd-example-modal-sm" id="modalInvestForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+              <div class="modal-content alert_info">
 	                <div class="modal-header text-center">
-	                  <h2 class="modal-title w-100 font-weight-bold" style="color:#627eea; font-size: 25px;">系統未偵測到錢包</h2>
+	                  <h2 class="modal-title w-100 font-weight-bold" style="color:#627eea; font-size: 25px;">連結錢包</h2>
 	                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                    <span aria-hidden="true">&times;</span>
 	                  </button>
-	                </div>
-	                <div class="text-center" style="margin-top:30px;"><h5>請先安裝錢包。</h5></div>		            	             
-		            <div class="container text-center" style="margin-top:20px; margin-bottom:50px; ">		            
-					  <div class="row">
-					    <div class="col">
-					      <a href="https://metamask.io/">	
-					      <img src="https://upload.cc/i1/2019/12/16/yMjXOR.png"></br>
-					      <button type="button" class="btn btn-secondary btn-sm btn_dis">電腦版請點選我</button>
-					      </a>
-					    </div>
-					    <div class="col">
-					      <a href="https://token.im/download?locale=zh-tw">	
-					      <img src="https://upload.cc/i1/2019/12/16/ZUeEpu.png"></br>
-					      <button type="button" class="btn btn-secondary btn-sm btn_dis">手機版請點選我</button>
-					      </a>
-					    </div>
-					  </div> 
-					</div>
-					<div class="guide"> 
-						<ul>
-							<li>電腦錢包<p style="margin-top:3px; ">安裝完成 > 打開錢包 > 登入完成 > 重新整理</p></li>
-							<li>手機錢包<p style="margin-top:3px; ">安裝完成 > 打開錢包 > 登入完成 > 點選「瀏覽」 > 輸入網址</p></li>
-						</ul>
-					</div>     
+	                </div>	                	            	             
+		            <div class="container  wallet_card" >		            
+						 <div class="card " style="width: 18rem; margin-top: 30px; margin-bottom: 30px; ">	  
+						  <div class="card-body text-center " style="background-color: #f8f9fa; overflow: hidden;">
+						    <h5 class="card-title">Connect Wallet</h5>						   
+						  </div>
+						  <ul class="list-group list-group-flush">
+						    <li class="list-group-item " >
+						    	<a class="navbar-brand li_icon" href="https://metamask.io/">
+								  <img src="https://metamask.io/img/metamask.png" width="30" height="30" alt="">				 	
+								</a>								
+								<a href="https://metamask.io/" target="blank()">Metamask</a>
+						    </li>
+						    <li class="list-group-item">
+						    	<a class="navbar-brand li_icon" href="https://trustwallet.com/">
+								  <img src="https://cdn6.aptoide.com/imgs/b/4/e/b4e4d31bc656f0e5b80b9ebf8fa8361f_icon.png?w=240" width="30" height="30" alt="">	  	
+								</a>
+								<a href="https://trustwallet.com/" target="blank()">TrustWallet</a>
+						    </li>
+						    <li class="list-group-item">
+						    	<a class="navbar-brand li_icon" href="https://status.im/">
+								  <img src="https://cdn.freebiesupply.com/logos/large/2x/status-2-logo-png-transparent.png" width="30" height="30" alt="">	  	
+								</a>
+								<a href="https://status.im/" target="blank()">status</a>
+						    </li>
+						    <li class="list-group-item">
+						    	<a class="navbar-brand li_icon" href="https://www.parity.io/">
+								  <img src="https://www.parity.io/content/images/2018/09/og_image-3-1.png" width="30" height="30" alt="">	  	
+								</a>
+								<a href="https://www.parity.io/" target="blank()">parity</a>
+						    </li>
+						    <li class="list-group-item">
+						    	<a class="navbar-brand li_icon" href="https://token.im/">
+								  <img src="https://upload.cc/i1/2019/12/16/ZUeEpu.png" width="30" height="30" alt="">	  	
+								</a>
+								<a href="https://token.im/" target="blank()">imToken</a>
+						    </li>
+						  </ul>						 
+						</div>
+					</div>					    
 		      </div>
             </div>
           </div>             
