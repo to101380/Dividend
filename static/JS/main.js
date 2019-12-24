@@ -53,12 +53,12 @@ if (typeof web3 !== 'undefined') {
       $("#link_sucess").text("已連結");    
     } else {
       // Set the provider you want from Web3.providers
-      web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545")); 
+      web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));           
       setTimeout(function(){
         $("#modalInvestForm").modal('show');
       },5000)
-
-
+      $(".redundant").css("display","none");
+      $(".no_duplication").css("visibility ","visible");
     }
 
     var myContract;

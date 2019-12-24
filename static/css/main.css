@@ -217,15 +217,15 @@
 	.none_user{
 		visibility: visible;
 	}
-
-	/*.redundant{
+/*
+	.redundant{
 		display: none;
-	}
-
-	.no_duplication{
-		visibility: visible;
 	}*/
 
+	/*.no_duplication{
+		display: none;
+	}
+*/
 
 	.loading {
 	  position: fixed;	  
