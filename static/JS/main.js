@@ -1,6 +1,6 @@
 
 //AOS animate
- // AOS.init();
+ AOS.init();
 
 // get ETH info
 
@@ -98,7 +98,7 @@ if (typeof web3 !== 'undefined') {
       var user_info = await myContract.methods.userinfo(coinbase).call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});      
       $("#capital").text(web3.utils.fromWei(user_info[0]));
       $("#user_interest").text(toPercent_01(1/user_info[1]));     
-      block_height = user_info[2];     
+      block_height = user_info[2]; 
       var unixTimestamp = new Date(parseInt(user_info[3])* 1000) ;      
       $("#time").text(unixTimestamp);
       block_link();
@@ -134,6 +134,7 @@ if (typeof web3 !== 'undefined') {
       var mon = await myContract.methods.mon().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
       $("#de_capital").text(toPercent_A(web3.utils.fromWei(user_info[0])*(1-(son/mon))));
       $("#de_capital_02").text(toPercent_A(web3.utils.fromWei(user_info[0])*((son/mon))));
+
       
 
       var Dividing_time = await myContract.methods.Dividing_times(coinbase).call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'})                        
@@ -217,6 +218,9 @@ if (typeof web3 !== 'undefined') {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'UA-154888716-1');
+
+
+
 
 
   
