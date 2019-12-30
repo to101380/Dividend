@@ -36,11 +36,22 @@ function toPercent_A(point){
     return str;
   }  
 
+function toPercent_B(point){
+    var str=Number(point).toFixed(4);          
+    return str;
+  }   
+
 function toPercent_01(point){
     var str=Number(point*100).toFixed(2);
     str+="%";
     return str;
   }
+
+function toPercent_02(point){
+    var str=Number(point*100).toFixed(4);
+    str+="%";
+    return str;
+  }  
 
 
 //smart contract
@@ -65,6 +76,7 @@ if (typeof web3 !== 'undefined') {
     var coinbase;
     var block_height;
     var contract_address;
+    var interest;
 
     async function printPostsToConsole() {
 
@@ -72,6 +84,12 @@ if (typeof web3 !== 'undefined') {
       var balance = await web3.eth.getBalance(coinbase);
 
       $("#my_address").text(coinbase);
+      $("#investor_address").text(coinbase);
+
+      var hidden_str = (coinbase.substring(6,38));
+      var replace_part = coinbase.replace(hidden_str,"...");            
+      $("#show_address").text(replace_part);
+
       $("#redundant_user").text(coinbase);
       $("#my_balance").text(toPercent_A(web3.utils.fromWei(balance)));
       $("#balance_info").text(toPercent_A(web3.utils.fromWei(balance)));  //wei 轉換成 ether web3.utils.fromWei() 
@@ -86,8 +104,8 @@ if (typeof web3 !== 'undefined') {
       var balance_contract = await web3.eth.getBalance(contract_address);
       $("#total_balance").text(toPercent_A(web3.utils.fromWei(balance_contract)));
 
-      var Interest = await myContract.methods.getInterest().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
-      $("#Interest_number").text(toPercent_01(1/Interest));
+      Interest = await myContract.methods.getInterest().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
+      $("#Interest_number").text(toPercent_02(1/Interest));
       $("#profit_year").text(toPercent_01((1/Interest)*365));
       $("#ready_interest").text(toPercent_01(1/Interest));
       $("#ready_year").text(toPercent_01((1/Interest)*365));
@@ -132,6 +150,7 @@ if (typeof web3 !== 'undefined') {
 
       var son = await myContract.methods.son().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
       var mon = await myContract.methods.mon().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
+      $("#quite_fee").text(toPercent_01(1-(son/mon)));      
       $("#de_capital").text(toPercent_A(web3.utils.fromWei(user_info[0])*(1-(son/mon))));
       $("#de_capital_02").text(toPercent_A(web3.utils.fromWei(user_info[0])*((son/mon))));
 
@@ -218,6 +237,15 @@ if (typeof web3 !== 'undefined') {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'UA-154888716-1');
+
+
+  $(document).ready(function(){
+        $('#ticket').on('keyup','.quantity',function(){          
+          var quantity = $(this).val();
+        $("#key_show_interest").text(toPercent_B(quantity*(1/Interest)*365));
+          })  
+      })
+ 
 
 
 

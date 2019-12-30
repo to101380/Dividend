@@ -70,7 +70,7 @@
 				    <blockquote class="blockquote mb-0 column" >
 				      <div class="ETH-LOGO " ></div>				      	
 				      <div class="card_p">
-				      	<p><span id="Interest_number">0.11%</span> 日利率</p>				      	
+				      	<p><span id="Interest_number">0.0164%</span> 日利率</p>				      	
 				      </div> 
 				      <label class="field a-field a-field_a2 page__field table_distant" >
                          <div class="input-group mb-3" id="ticket" data-price="141">
@@ -80,21 +80,30 @@
 							</div>																			
 						 </div>	
 						 <div class="ETH_price text-left"><p>匯率 : <span id ="total"></span> USD</p></div>
-						 <div class="ETH_price text-left"><p>我的餘額 : <span id ="balance_info"></span> ETH </p></div>					 				 
-                       </label>                       
+						 <div class="ETH_price text-left"><p>我的餘額 : <span id ="balance_info"></span> ETH </p></div>
+						 <div class="ETH_price text-left"><p>依照當前的利息，一年後你將獲得的利息約為 <span id ="key_show_interest">0.0000</span> ETH </p></div>	 
+                       </label>  
 					   <table class="table table-sm table_distant text-left">							 
 							<tbody>
-								 <tr>
+								<!--  <tr>
 								   <th scope="row" style="padding-left: 30px;" >參與人數</th>
-								   <td id="count">2</td>							      						     
+								   <td id="count">0</td>							      						     
 								 </tr>
 								 <tr>
 								   <th scope="row" style="padding-left: 30px;" >合約餘額</th>
 								   <td ><span id="total_balance">0.00108</span> ETH</td>						      						     
-								 </tr>	
+								 </tr> -->	
 								 <tr>
-								   <th scope="row" style="padding-left: 30px;">年化利率</th>
-								   <td id="profit_year">40.56%</td>							      						     
+								   <th scope="row">投資人(你的地址)</th>								   
+								   <td id="show_address"> </td>						     
+								 </tr>
+								 <tr>
+								   <th scope="row" >年化利率</th>
+								   <td id="profit_year">5.99%</td>							      						     
+								 </tr>
+								  <tr>
+								   <th scope="row">退出手續費</th>
+								   <td id="quite_fee">1%</td>							      						     
 								 </tr>							   
 							</tbody>
 					   </table>				      
@@ -263,7 +272,7 @@
 	    </div>
 	    <div class="modal-content no_duplication">
 	      <div class="modal-header">
-	        <h5 class="modal-title" id="exampleModalLabel">投資資訊</h5>
+	        <h5 class="modal-title" id="exampleModalLabel">我的方案</h5>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
@@ -273,6 +282,10 @@
 	          	<div class="form-group">
 	          	<table class="table table-borderless table_distant text-left " style="margin-left: 22px;">
 				  <tbody>
+				  	 <tr>
+				      <th scope="row"><p>投資人(投資地址) : </p></th>
+				      <td><p class="investor_address"><span id="investor_address"></span></p></td>
+				    </tr>
 				    <tr>
 				      <th scope="row"><p>投資枚數 : </p></th>
 				      <td><p><span id="ready_volume">0.565461</span> ETH </p></td>
