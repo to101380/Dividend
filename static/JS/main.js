@@ -77,11 +77,12 @@ if (typeof web3 !== 'undefined') {
     var block_height;
     var contract_address;
     var interest;
+    var balance;
 
     async function printPostsToConsole() {
 
       coinbase = await web3.eth.getCoinbase();      
-      var balance = await web3.eth.getBalance(coinbase);
+      balance = await web3.eth.getBalance(coinbase);      
 
       $("#my_address").text(coinbase);
       $("#investor_address").text(coinbase);
@@ -243,6 +244,15 @@ if (typeof web3 !== 'undefined') {
         $('#ticket').on('keyup','.quantity',function(){          
           var quantity = $(this).val();
         $("#key_show_interest").text(toPercent_B(quantity*(1/Interest)*365));
+
+        console.log(balance);
+
+        if(quantity*1000000000000000000 < balance ){
+          $("#Insufficient_balance").css("visibility","hidden")
+        }else{
+           $("#Insufficient_balance").css("visibility","visible")
+        }
+       
           })  
       })
  

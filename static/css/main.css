@@ -17,6 +17,11 @@
 		font-family:微軟正黑體;
 		color: #939496;
 	}
+
+	#Insufficient_balance{
+		color: red;
+		visibility: hidden;
+	}
 	
 
 	#Interest_number{
@@ -137,6 +142,8 @@
 		box-shadow: 3px 3px 3px rgba(0%,0%,0%,0.10);
 
 	}
+
+	
 
 	.subtitle{
 		font-family:微軟正黑體;
