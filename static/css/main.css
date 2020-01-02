@@ -143,6 +143,13 @@
 
 	}
 
+	.ready_table{
+		border-radius: 8px; 
+		background-color: #ebecf4;
+		padding-top: 13px; 
+		box-shadow: 3px 3px 3px rgba(0%,0%,0%,0.10);
+	}
+
 	
 
 	.subtitle{
@@ -232,6 +239,11 @@
 
 	}	
 
+	.ready_table{
+		margin-left: 22px;
+		width: 400px;
+	}
+
 	/*退出的可見度*/
 
 	.sible {
@@ -298,6 +310,22 @@
 		overflow: auto;	
 	}
 
+	.ready_table{		
+		width: 100px;			
+	}
+
+
+}	
+
+
+@media (max-width: 360px) {
+
+	.ready_table{		
+		width: 80px;
+		margin-left: 0px;		
+	}
+
+
 }	
 
 
@@ -320,6 +348,11 @@
 	.revert{
 		font-size: 9px;
 	} 
+
+	.ready_table{		
+		width: 280px;
+		margin-left: 15px;
+	}
 
  }
 
@@ -348,6 +381,10 @@
 
 	.shad_02{
 		margin-left: 30px;
+	}
+
+	.ready_table{		
+		width: 300px;
 	}
 	
 }

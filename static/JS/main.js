@@ -108,7 +108,7 @@ if (typeof web3 !== 'undefined') {
       Interest = await myContract.methods.getInterest().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
       $("#Interest_number").text(toPercent_02(1/Interest));
       $("#profit_year").text(toPercent_01((1/Interest)*365));
-      $("#ready_interest").text(toPercent_01(1/Interest));
+      $("#ready_interest").text(toPercent_02(1/Interest));
       $("#ready_year").text(toPercent_01((1/Interest)*365));
 
       var count = await myContract.methods.count().call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'});
@@ -247,6 +247,7 @@ if (typeof web3 !== 'undefined') {
         $('#ticket').on('keyup','.quantity',function(){          
           var quantity = $(this).val();
         $("#key_show_interest").text(toPercent_B(quantity*(1/Interest)*365));
+        $("#key_show_interest_02").text(toPercent_B(quantity*(1/Interest)*365));
 
         console.log(balance);
 
