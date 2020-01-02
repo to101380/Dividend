@@ -34,12 +34,17 @@ function toPercent(point){
 function toPercent_A(point){
     var str=Number(point).toFixed(5);          
     return str;
-  }  
+  } 
 
 function toPercent_B(point){
     var str=Number(point).toFixed(4);          
     return str;
   }   
+
+function toPercent_C(point){
+    var str=Number(point).toFixed(7);          
+    return str;
+  }    
 
 function toPercent_01(point){
     var str=Number(point*100).toFixed(2);
@@ -158,7 +163,7 @@ if (typeof web3 !== 'undefined') {
       
 
       var Dividing_time = await myContract.methods.Dividing_times(coinbase).call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'})                        
-      $("#profit").text(toPercent_A(parseInt(Dividing_time)*parseFloat( web3.utils.fromWei(user_info[0]))*parseFloat(1/user_info[1])));
+      $("#profit").text(toPercent_C(parseInt(Dividing_time)*parseFloat( web3.utils.fromWei(user_info[0]))*parseFloat(1/user_info[1])));
     };
 
     printPostsToConsole();
