@@ -170,6 +170,8 @@ if (typeof web3 !== 'undefined') {
       });
     } 
 
+    //監聽確認購買的金額、枚數
+
      var comfirm =  document.querySelector('#comfirm');
       comfirm.addEventListener("click",function(e){
         e.preventDefault();
@@ -189,14 +191,14 @@ if (typeof web3 !== 'undefined') {
         recommend(recommended);
       });
 
-    
-
+    //投資
     function invest(volume){
       myContract.methods.invest().send({from: coinbase , value: volume}).then(function(receipt){          
         location.reload();
       });
     }
 
+    //推薦人
     function recommend(recommended){
       myContract.methods.recommend(recommended).send({from: coinbase}).then(function(receipt){          
         location.reload();
@@ -240,6 +242,7 @@ if (typeof web3 !== 'undefined') {
   gtag('config', 'UA-154888716-1');
 
 
+//快速檢視輸入的本金所輸出的年利息，查詢餘額是否足夠  
   $(document).ready(function(){
         $('#ticket').on('keyup','.quantity',function(){          
           var quantity = $(this).val();
