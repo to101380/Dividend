@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154888716-1"></script>	
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+ <!-- AOS animate -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<!-- Customized css -->
+<link href="../static/css/partner_CSS/partner_02.css" rel="stylesheet">
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<!-- Web3 -->
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+
+<link rel="icon" href="https://upload.cc/i1/2019/12/19/xMeFIq.png" type="image/x-icon">
+<link rel="shortcut icon" href="https://upload.cc/i1/2019/12/19/xMeFIq.png" type="image/x-icon" / >
+
+
+
+	<title> Webinvest </title>
+
+</head>
+<body>
+<!-- navbar -->
+	<section style="box-shadow: 0px 0px 8px rgba(0,0,0,0.3);">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <div class="title_theme">	
+	  <a class="navbar-brand" href="/index.html">
+	  	<img src="https://i.imgur.com/ZAsvZGH.png" width="35" height="35" alt="">	  	
+	  </a>
+	  <a class="navbar-brand" href="/index.html">
+	  	<h5 style="margin-top: 8px;"> WebInvest </h5>	  	
+	  </a>
+	  </div>
+	<!--   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarText">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#"></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#"></a>
+	      </li>
+	    </ul>
+	    <span class="navbar-text">
+	     
+	    </span>
+	  </div> -->
+	</nav>
+	</section>
+<!-- content -->	
+	<section>
+
+		<div class="container">	
+		 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+			  <div class="carousel-inner" style="padding: 18px;">
+			    <div class="carousel-item active banner">
+			        <img src="https://otcbtc.com/uploads/banner/image/48/8644c3aa-e358-4fc6-a32b-3ee7bdc219c6.png" class="d-block w-100" alt="...">
+			    </div>			   
+			  </div>
+		  </div>	
+		  <div class="row justify-content-md-center card_info row align-items-center">
+		    <div class="col-md-auto text-center">
+		    	<img src="https://i.imgur.com/5QxPz1i.png" width="150" height="150">
+		    </div>
+		    <div class="col-sm-9" style="margin-top: 10px;">
+		    	<div class="row align-items-center text-center">
+				    <div class="col-sm-3">
+				     <p class="title_name" style="font-size:15px;">BIOPLUS X-RAY token</p>			        
+				    </div>
+				    <div class="col-md-auto">	
+				     <p>總發行量 : <span>100,000,000</span></p>		     
+				    </div>
+				    <div class="col-md-auto ">	
+				     <p>私募時間 : <span>2020/07/31</span></p>			      
+				    </div>				    				    
+				</div>
+				<hr>	
+				<div class="row">
+				    <div class="col-sm-6 straight_line" >
+				    	<div>
+				          <div>
+				          	<tr>	
+				          	  <td><p>價格: <span id="token_price"></span> ETH / BPX </td>				      
+						      <td><p>第一階段發放: <span>10,000,000 BPX</span></p></td>
+						      <td><p>目標 : <span>2,353 ETH</span></p></td>					      
+						    </tr>	
+						    <hr>	          	
+				            <div>
+				            	<p>倒數時間 :</p>
+				            	<div class="row justify-content-center text-center">				            	
+									<div class="reciprocal" id="timer_day"></div>
+									<div class="reciprocal" id="timer_hr"></div>
+									<div class="reciprocal" id="timer_min"></div>
+									<div class="reciprocal" id="timer_sec"></div>	
+								</div>							
+							</div>
+							<div id="finish"></div>
+				          </div>
+				        </div>  					    		        
+				    </div>
+				    <div class="col-sm-6 text-left">				    				    	   
+				    	<P>目前進度</P>
+				    	<p><span id="Raised_balance"></span>/2353 ETH</p>
+				    	<div class="progress">
+							 <div class="progress-bar" id="schedule" role="progressbar" style="width:0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">0%
+							 </div>						 
+						</div>	
+						<hr>
+						<div class="input-group" id="ticket">
+						  <input type="text" class="form-control quantity"  placeholder="輸入枚數" aria-label="Recipient's username" aria-describedby="basic-addon2" >	
+						  <div class="input-group-append">
+						    <span class="input-group-text">ETH</span>
+						    <button class="btn btn-primary" type="submit" id="invest">投資</button>
+						  </div>
+						</div>
+						<div class="usdt_price text-left" style="margin-top:8px;"><p>匯率 :</p></div>
+						<div>
+							<p><span id ="total"></span> USD</p>
+							<p><span id ="token_total">0.000</span> BPX</p>
+						</div>				
+				    </div>				    				    				    
+				</div>							
+		    </div>		    
+		  </div>			
+		</div>	
+		<div class="container" style="padding: 10px;">
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+		  <li class="nav-item">
+		    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">代幣詳情</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">團隊介紹</a>
+		  </li>		
+		</ul>
+			<div class="tab-content" id="myTabContent">
+			  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+			  	<div class="container">
+				  <div class="row">
+				    <div class="col-md-6 card_info">
+				      <h4>代幣資訊</h4>
+				      <hr>		
+				      	<div class="text-center" id="legendPlaceholder">
+				      		<img src="https://i.imgur.com/mRDbahQ.jpg" width="300" height="420" >
+				      	</div>
+						<div id="flotcontainer"></div>		      
+				    </div>
+				    <div class="col-md-5 card_info">
+				      <h4>智能合約</h4>				      
+				      	<table class="table">						  
+						  <tbody >
+						    <tr>
+						      <th scope="row">ERC20 合約地址:</th>
+						      <td><span id="ERC20_address"></span></td>						      
+						    </tr>
+						    <tr>
+						      <th scope="row">合約所有者</th>
+						      <td><span id="ERC20_owner"></td>						      
+						    </tr>
+						    <tr>
+						      <th scope="row">合約管理者</th>
+						      <td><span id="ERC20_manager"></td>						      
+						    </tr>
+						    <tr>
+						      <th scope="row">目前參與人數</th>
+						      <td><span id="join_count"></td>						      
+						    </tr>						  
+						  </tbody>					 
+						</table>
+						<div style="margin-top: 65px;"></div>
+						<table class="table">
+						  <thead>
+						    <tr>
+						      <h4>我的資訊</h4>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <th scope="row">
+						      	<img src="https://i.imgur.com/5QxPz1i.png" width="35" height="35" style="margin:5px;">BPX
+						      </th>
+						      <td style="padding-top: 24px;"><span id="erc20_balance"></span>BPX</td>						      
+						    </tr>
+						    <tr>
+						      <th scope="row">
+						      	<p>我投資的金額</p>
+						      </th>
+						      <td><span id="My_amount"></span> ETH</td>
+						    </tr>						    
+						  </tbody>
+						</table>
+				    </div>				    
+				  </div>
+				</div>  
+			  </div>
+			  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+			  	<div class="container">
+				  <div class="row">
+				    <div class="col-md-6">
+				     <div class="card card_info">
+					  <img src="https://i.imgur.com/nWiyCuB.jpg" class="card-img-top my_photo" alt="...">
+					  <div class="card-body">
+					    <h5 class="card-title">曾奕衡  Billy</h5>
+					    <p class="card-text"> 曾奕衡營養師 Billy </p>
+					    <p class="card-text">經歷: 臺灣中山醫學大學 營養學系畢業</p> 
+					    <p class="card-text">美商BioPlus x 國際部執行長。</p>
+					    <p class="card-text">1996年專技國家高考及格營養師 1996年 恆安老人安養中心臨床營養師 2004年 加拿大多倫多naturalpathic Un.研修. GNC國際營養食品連鎖店店務經理 年代,民視,東森等節目營養專家 NuReCo欣芮通生技公司 研發部 執行長 ESMOND美國愛司盟營養品公司 中國區培訓部 總營养師。</p>	  
+					  </div>
+					 </div>
+				    </div>
+				    <div class="col-md-6">
+				        <div class="card card_info">
+					  <img src="https://i.imgur.com/XV5S02G.jpg" class="card-img-top my_photo" alt="...">
+					  <div class="card-body">
+					    <h5 class="card-title">KARL  </h5>
+					    <p class="card-text">美國加州人</p>	
+					    <p class="card-text">UCLA大學應用數學系畢業</p>	
+					    <p class="card-text">美國比特幣挖礦礦池建構系統共同創辦人</p>	
+					    <p class="card-text">美國SUNDAY行銷公司市場總監</p>
+					    <p class="card-text">美國BIOPLUS X百朋國際公司 監事主席</p>	  
+					  </div>
+					 </div>
+				    </div>
+				    <div class="col-md-6">
+				        <div class="card card_info">
+					  <img src="https://i.imgur.com/SZ5WqWW.jpg" class="card-img-top my_photo" alt="...">
+					  <div class="card-body">
+					    <h5 class="card-title">陸弈辰  SELINA</h5>
+					    <p class="card-text">台北市恆安老人安養中心復健部 復健師</p>
+					    <p class="card-text">中壢市正倫復健科診所 復健師</p>	 
+					    <p class="card-text">中壢市安倫復健科診所 復健師</p>	 
+					    <p class="card-text">美商Interush 亞洲區 特約講師</p>	 
+					    <p class="card-text">衡名企業有限公司 財務長</p>	 
+					    <p class="card-text">美商BIOPLUS  Inc USA 監事& 財務長</p>	 	 
+					  </div>
+					 </div>
+				    </div>
+				    <div class="col-md-6">
+				        <div class="card card_info">
+					  <img src="https://i.imgur.com/NqcHYoi.jpg" class="card-img-top my_photo" alt="...">
+					  <div class="card-body">
+					    <h5 class="card-title">呂紹斌</h5>
+					    <p class="card-text">升高中升大學連鎖補習班執行長</p>	
+					    <p class="card-text">蘇州格林國際幼兒園(2012年創園)園長</p>
+					    <p class="card-text">上海哈比橋治幼兒園(2013年創園)校長</p>
+					    <p class="card-text">上海法卡投資管理有限公司校長</p>
+					    <p class="card-text">上海法欣生物科技有限公司董事長</p>  
+					    <p class="card-text">美商BIOPLUS X  市場部 經理</p>  
+					  </div>
+					 </div>
+				    </div>
+				  </div>
+				</div>			  	
+			  </div>
+			</div>	
+		</div>
+	</section>	
+	<footer class="page-footer font-small indigo py-4">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3 foot_font">© 2019 Copyright:
+          <a href="https://www.instagram.com/webinvest/?hl=zh-tw">WebInvest</a>                         
+        </div>
+        <div class="footer-copyright text-center py-3 foot_font ETH_price text-left foot_time">
+        	<p>網站更新時間 : <span id ="update_time" ></span></p>        	
+        </div>         
+    </footer>    
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ 
+<!-- Customized js -->
+<script src="../static/js/partner/partner_02/partner_02.js"></script>
+
+
+</body>
+</html>
