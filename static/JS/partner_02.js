@@ -40,7 +40,7 @@ function toPercent_01(point){
 
 //時間倒數
   /* Set the date we're counting down to */
-    var countDownDate = new Date('JUL 31, 2020 00:00:00').getTime();
+    var countDownDate = new Date('JUL 31, 2023 00:00:00').getTime();
     var countDownDateTXT = '';
     function mytime() {
         countDownDateTxt = document.getElementById('txt').value;
