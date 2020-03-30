@@ -184,7 +184,7 @@ var x = setInterval(function() {
     var ctx = document.getElementById("myChart").getContext('2d');
 
       var myChart = new Chart(ctx, {
-          type: "pie",
+          type: "doughnut",
           data: {
             labels: ["人事", "市場行銷", "進入美國德州09NERS能源公司股權金", "進入J-PLUS 連鎖飲料店 開發經營", "進入BIOPLUS 生技營養品研發中心", "進入ETH 挖礦礦池", "進入 Dai 穩定幣平台系統"],
             datasets: [{            
