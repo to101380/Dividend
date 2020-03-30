@@ -19,6 +19,8 @@
 <!-- Web3 -->
 <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
 <link rel="icon" href="https://upload.cc/i1/2019/12/19/xMeFIq.png" type="image/x-icon">
 <link rel="shortcut icon" href="https://upload.cc/i1/2019/12/19/xMeFIq.png" type="image/x-icon" / >
 
@@ -152,8 +154,8 @@
 				    <div class="col-md-6 card_info">
 				      <h4>代幣資訊</h4>
 				      <hr>		
-				      	<div class="text-center" id="legendPlaceholder">
-				      		<img class="Raised_distribution" src="https://i.imgur.com/mRDbahQ.jpg" width="300" height="420" >
+				      	<div class="text-center" id="legendPlaceholder" style="margin:35px; padding: 35px;">
+				      		<canvas id="myChart" width="400" height="400"></canvas>
 				      	</div>
 						<div id="flotcontainer"></div>		      
 				    </div>
