@@ -188,7 +188,7 @@ var x = setInterval(function() {
           data: {
             labels: ["人事", "市場行銷", "進入美國德州09NERS能源公司股權金", "進入J-PLUS 連鎖飲料店 開發經營", "進入BIOPLUS 生技營養品研發中心", "進入ETH 挖礦礦池", "進入 Dai 穩定幣平台系統"],
             datasets: [{            
-                data: [0.5, 0.15, 0.2, 0.2, 0.1, 0.25, 0.05],
+                data: [0.05, 0.15, 0.2, 0.2, 0.1, 0.25, 0.05],
                 backgroundColor: [
                     'rgba(255, 99, 132)',
                     'rgba(54, 162, 235)',
