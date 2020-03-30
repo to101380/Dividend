@@ -123,6 +123,13 @@
 		margin-left:10px;
 		margin-right:10px; 
 	}
+
+	.sd{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
 	
 	
 	@media (max-width: 767px) {
