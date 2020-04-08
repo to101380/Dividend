@@ -204,6 +204,27 @@ var x = setInterval(function() {
       });
 
 
+      var ctx = document.getElementById('myprice').getContext('2d');
+      var chart = new Chart(ctx, {
+          // 要创建的图表类型
+          type: "line",
+
+          // 数据集
+          data: {
+              labels: ["DEC", " JAN", "FEB", "MAR", "APR"],
+              datasets: [{
+                  label: "TOCC/NRC 單位:USD",
+                  backgroundColor: 'rgb(255, 99, 132)',
+                  borderColor: 'rgb(255, 99, 132)',
+                  data: [0.12, 0.115, 0.121, 0.118, 0.119],
+              }]
+          },
+
+          // 配置选项
+          options: {}
+      });
+
+
 
 
  
