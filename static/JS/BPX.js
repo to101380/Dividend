@@ -211,11 +211,11 @@ var x = setInterval(function() {
 
           // 数据集
           data: {
-              labels: ["DEC", " JAN", "FEB", "MAR", "APR"],
+              labels: ["DEC", " JAN", "FEB", "MAR", "APR", "MAY"],
               datasets: [{
                   label: "TOCC/NRC 單位:USD",                  
                   borderColor: 'rgb(19, 174, 103)',
-                  data: [0.12, 0.115, 0.121, 0.118, 0.119],
+                  data: [0.12, 0.115, 0.121, 0.118, 0.119, 0.125],
               }]
           },
 
