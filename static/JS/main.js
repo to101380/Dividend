@@ -12,7 +12,7 @@ $(document).ready(function(){
         console.log(msg);
         var ETH_price = (msg[0].price_usd);
         var updatedtime = (msg[0].last_updated);
-        var unixTimestamp = new Date(parseInt(updatedtime)* 1000) ;      
+        var unixTimestamp = new Date(parseInt(updatedtime)* 1000);      
         $("#update_time").text(unixTimestamp);          
         $("#total").text(toPercent(ETH_price)); 
 
